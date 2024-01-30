@@ -4,9 +4,7 @@ This project represents the work in our paper submitted to [10th Anniversary of 
 
 ### In this project, we provide:
 
-- SDN application source codes
-- Our Testbed configuration, deployment including scripts and used resources
-- Every above component will be described in this README as much as possible.
+- Part of the code of the paper. More details will be provided as soon as possible
 
 ### Dependencies
 
@@ -58,20 +56,25 @@ sudo apt-get install d-itg
 
 ### SDN Applications Usage
 
-In this project, we created two Ryu applications, and the source codes are stored in the  [SDN-Classifier directory](https://github.com/nsaif86/SDN-Classifier). The first component, monitoring, is responsible for collecting and extracting the features. The second, which is also our main application, performs our primary objective: feeding the features of each flow into the training saved model. The method is clearly described in our paper.
+In this project, we created two Ryu applications, and the source codes are stored in the  [SDN-Power-Optimization directory](https://github.com/nsaif86/SDN-Power-Optimization/tree/main). The first component, FPLF, is responsible for consolidation the flows in the one like as much as posable. The second, Data Center Network topology. The method is clearly described in our paper.
 
-In our situation, we have omitted network management on network services, so a flow for IP packets simply consists of only two matching fields: Source and Destination MAC Address. This simplicity reduces the load on the controller and helps switches forward packets faster.
 
-To run the applications, copy the two Python programs into the ryu.app folder of the Ryu directory and open two terminal windows, execute the following command:
+
+To run the applications, copy the two Python programs into the pox.ext folder of the pox directory and open two terminal windows, execute the following command:
 
 In the first terminal
 ```
-sudo ryu-manager  monitor.py classifier_nn.py NN
+sudo ./pox.py  openflow.discovery FPLF
+
 ```
 In the second terminal
 ```
 sudo python topology.py
 ```
-Then, you can generate traffic (voice, DDoS, etc.) using D-ITG inside Mininet and observe the results in the first terminal.
+Then, you can generate traffic (voice, DDoS, etc.) using D-ITG inside Mininet and observe the results in the second terminal.
 
 More files and descriptions will be available as soon as possible. Please, if you find the code useful, cite our work.
+
+to cite :
+
+Nsaif, M.; Kovásznai, G.; Rácz, A.; Malik, A.; de Fréin, R. An Adaptive Routing Framework for Efficient Power Consumption in Software-Defined Datacenter Networks. Electronics 2021, 10, 3027. https://doi.org/10.3390/electronics10233027
