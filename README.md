@@ -14,7 +14,7 @@ This project represents the work in our paper submitted to [10th Anniversary of 
 
 ####  Ryu controller
 
-> We use [POX](https://github.com/noxrepo/pox) to deploy our management and monitoring SDN application. POX can work in any OS Environment that support python 2. You can install pox as following:
+> We use [POX](https://github.com/noxrepo/pox) to deploy our management and monitoring SDN application. POX can work in any OS Environment that support python 2 or 3. You can install pox as following:
 ```
 git clone http://github.com/noxrepo/pox
 ```
