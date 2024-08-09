@@ -12,7 +12,7 @@ This project represents the work in our paper submitted to [10th Anniversary of 
 
 >  If you are using Windows or other OS, you can install Ubuntu 20.04 as a Virtual Machine (VM) using Virtual Box. You can download the ISO installer from this [link:](https://www.ubuntu.com/download/desktop)
 
-####  Ryu controller
+####  POX controller
 
 > We use [POX](https://github.com/noxrepo/pox) to deploy our management and monitoring SDN application. POX can work in any OS Environment that supports Python 2 or 3. You can install pox as follows:
 ```
@@ -64,14 +64,13 @@ To run the applications, copy the two Python programs into the pox.ext folder of
 
 In the first terminal
 ```
-sudo ./pox.py  openflow.discovery FPLF
+sudo ./pox.py  discovery keepalive FPLFv1
 
 ```
 In the second terminal
 ```
-sudo python topology.py
+sudo python3 fat_tree.py
 ```
-Then, you can generate traffic (voice, DDoS, etc.) using D-ITG inside Mininet and observe the results in the second terminal.
 
 See this [video](https://www.youtube.com/watch?v=VcedqMK4RPU), which includes a practical example of running the code. Please, if you find the code useful, cite our work.
 
